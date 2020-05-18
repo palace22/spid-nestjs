@@ -1,0 +1,55 @@
+.my-grid {
+}
+.parent-row {
+  justify-content: center !important;
+}
+
+ion-toolbar {
+  --ion-background-color: #0d0d0d;
+}
+
+ion-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-img {
+  padding-top: 50px;
+  transform: scale(0.5);
+}
+
+ion-title {
+  justify-content: center !important;
+  text-align: left;
+  font-family: "Aachen";
+  color: #f2ae30;
+  font-size: 50px;
+  text-shadow: 0px 5px 0px #bf2431;
+}
+
+ion-label {
+  justify-content: center !important;
+  text-align: left;
+  font-family: "Aachen";
+  color: #f2ae30;
+  font-size: 20px;
+  text-shadow: 0px 2px 0px #bf2431;
+}
+
+/* Color Theme Swatches in Hex */
+.Pulp-Fiction-1-hex {
+  color: #bf2431;
+}
+.Pulp-Fiction-2-hex {
+  color: #f2ae30;
+}
+.Pulp-Fiction-3-hex {
+  color: #f29b30;
+}
+.Pulp-Fiction-4-hex {
+  color: #f2522e;
+}
+.Pulp-Fiction-5-hex {
+  color: #0d0d0d;
+}
