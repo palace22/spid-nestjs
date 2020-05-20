@@ -62,6 +62,7 @@ export class SpidStrategy extends PassportStrategy(Strategy, 'spid') {
                 EntityID: this.serviceProvider.entityMeta.getEntityID(),
                 AttributeConsumingServiceIndex: "0",
             })
+            console.log(context)
             request = context
             return { id: id, context: context };
         })
@@ -75,6 +76,7 @@ export class SpidStrategy extends PassportStrategy(Strategy, 'spid') {
     }
 
     async parseResponse(idpResponse) {
+        console.log(idpResponse)
         return await this.serviceProvider.parseLoginResponse(this.identityServiceProvider, 'post', idpResponse)
     }
 

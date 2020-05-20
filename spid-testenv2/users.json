@@ -1,0 +1,175 @@
+{
+    "evita82": {
+        "attrs": {
+            "familyName": "Orlando",
+            "companyName": "Caputo-De luca SPA",
+            "registeredOffice": "Vicolo Anselmo 58 Piano 2\nBorgo Jarno, 90813 Caserta (ME)",
+            "fiscalNumber": "TINIT-WNTKQF31G63E068K",
+            "dateOfBirth": "2006-01-04",
+            "name": "Baldassarre",
+            "gender": "F",
+            "email": "egidio49@benedetti-fiore.com",
+            "spidCode": "TENVu7ibRRdyXA"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "qfarina": {
+        "attrs": {
+            "familyName": "Caruso",
+            "companyName": "Valentini-Caruso Group",
+            "registeredOffice": "Strada Davide 6\nSesto Radames, 32598 La Spezia (FM)",
+            "fiscalNumber": "TINIT-KBTZFR72L22T021E",
+            "dateOfBirth": "1971-10-01",
+            "name": "Clea",
+            "gender": "M",
+            "email": "udamico@hotmail.com",
+            "spidCode": "TENVjz3szLHK31"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "giancarlo27": {
+        "attrs": {
+            "familyName": "Ruggiero",
+            "companyName": "Guerra, Grassi e Mazza Group",
+            "registeredOffice": "Canale Coppola 961\nCoppola ligure, 84677 Rovigo (TP)",
+            "fiscalNumber": "TINIT-MHMLVT52U27Z687G",
+            "dateOfBirth": "1992-07-28",
+            "name": "Oreste",
+            "gender": "M",
+            "email": "lvitale@poste.it",
+            "spidCode": "TENVd5PmLKj0Kl"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "matildebenedetti": {
+        "attrs": {
+            "familyName": "Milani",
+            "companyName": "Marini, Marchetti e Lombardi SPA",
+            "registeredOffice": "Strada Mariani 7 Piano 5\nSesto Oreste salentino, 44701 Piacenza (VR)",
+            "fiscalNumber": "TINIT-UHSYRK94A68X449G",
+            "dateOfBirth": "2009-02-24",
+            "name": "Flaviana",
+            "gender": "M",
+            "email": "marieva83@gentile.it",
+            "spidCode": "TENVm9ixRy2gnH"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "test": {
+        "attrs": {
+            "familyName": "Pagano",
+            "companyName": "Lombardi, Barbieri e Grasso Group",
+            "registeredOffice": "Strada Sorrentino 52 Appartamento 22\nBasile sardo, 57233 Imperia (RC)",
+            "fiscalNumber": "TINIT-ENGGLP06X76D704B",
+            "dateOfBirth": "1980-06-08",
+            "name": "Jack",
+            "gender": "M",
+            "email": "hmoretti@hotmail.it",
+            "spidCode": "TENVZcf8Iz0Uuo"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "palazzolog": {
+        "attrs": {
+            "familyName": "Palazzolo",
+            "mobilePhone": "3333852481",
+            "name": "Giuseppe ",
+            "gender": "M",
+            "email": "palazzolo1995@gmail.com",
+            "spidCode": "GPPPd5PmLKj0Kl"
+        },
+        "pwd": "pippo",
+        "sp": null
+    },
+    "leoneselvaggia": {
+        "attrs": {
+            "familyName": "Bianchi",
+            "companyName": "Costantini, D'angelo e Rizzi s.r.l.",
+            "registeredOffice": "Canale Trevis 05 Piano 5\nBorgo Karim, 19791 Catania (RI)",
+            "fiscalNumber": "TINIT-PTPPGL13K61Q134Z",
+            "dateOfBirth": "1985-02-01",
+            "name": "Eufemia",
+            "gender": "F",
+            "email": "cristynmartini@rossi.it",
+            "spidCode": "TENVoRT6A83kgv"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "piererminiomartini": {
+        "attrs": {
+            "familyName": "Greco",
+            "companyName": "Longo, Gentile e Esposito Group",
+            "registeredOffice": "Contrada Joannes 6\nSanna salentino, 00348 Novara (TA)",
+            "fiscalNumber": "TINIT-TLIPVN77L38O259X",
+            "dateOfBirth": "2008-04-10",
+            "name": "Trevis",
+            "gender": "F",
+            "email": "bgiordano@vodafone.it",
+            "spidCode": "TENVAN0QtaHsQM"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "caputolia": {
+        "attrs": {
+            "familyName": "Gatti",
+            "companyName": "Silvestri-Grasso Group",
+            "registeredOffice": "Vicolo Jari 33\nCarmela laziale, 32133 Reggio Emilia (IM)",
+            "fiscalNumber": "TINIT-QACDAE72D03C105P",
+            "dateOfBirth": "2006-06-05",
+            "name": "Joey",
+            "gender": "F",
+            "email": "nmartini@poste.it",
+            "spidCode": "TENVv7x22xN5M6"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "moniaricci": {
+        "attrs": {
+            "familyName": "Martini",
+            "companyName": "Piras e figli",
+            "registeredOffice": "Stretto Gatti 209 Piano 9\nBarone calabro, 86799 Treviso (CN)",
+            "fiscalNumber": "TINIT-CPVARS17T11C993X",
+            "dateOfBirth": "1971-04-26",
+            "name": "Furio",
+            "gender": "F",
+            "email": "gcosta@ferri.it",
+            "spidCode": "TENV0WwkeBQS8K"
+        },
+        "pwd": "test",
+        "sp": null
+    },
+    "Palazzolog": {
+        "attrs": {
+            "familyName": "Palazzolo",
+            "gender": "M",
+            "email": "palazzolo1995@gmail.com",
+            "companyName": "Unifi",
+            "spidCode": "plz9522"
+        },
+        "pwd": "pippo",
+        "sp": "http://localhost:3000"
+    },
+    "tbellini": {
+        "attrs": {
+            "familyName": "Morelli",
+            "companyName": "D'amico e figli",
+            "registeredOffice": "Piazza De luca 9\nFerraro umbro, 28588 Piacenza (GR)",
+            "fiscalNumber": "TINIT-FVKHWA44L87E818G",
+            "dateOfBirth": "2013-02-26",
+            "name": "Sue ellen",
+            "gender": "M",
+            "email": "lmarini@dangelo.net",
+            "spidCode": "TENVMyE0wokDh2"
+        },
+        "pwd": "test",
+        "sp": null
+    }
+}

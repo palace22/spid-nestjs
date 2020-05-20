@@ -1,0 +1,26 @@
+<EntityDescriptor entityID="http://localhost:3000" xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:assertion="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+    <SPSSODescriptor AuthnRequestsSigned="true" WantAssertionsSigned="true" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <KeyDescriptor use="signing">
+            <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+                <ds:X509Data>
+                    <ds:X509Certificate>
+						MIIDwTCCAqmgAwIBAgIUVrlvw2K2ZAldnbhAN34RdgubtmowDQYJKoZIhvcNAQELBQAwcDELMAkGA1UEBhMCSVQxDTALBgNVBAgMBFJvbWUxDTALBgNVBAcMBFJvbWUxDTALBgNVBAoMBEFnSUQxJTAjBgNVBAsMHFRlc3QgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkxDTALBgNVBAMMBEFnSUQwHhcNMjAwNTA2MTUwMzAzWhcNMzAwNTA0MTUwMzAzWjBwMQswCQYDVQQGEwJJVDENMAsGA1UECAwEUm9tZTENMAsGA1UEBwwEUm9tZTENMAsGA1UECgwEQWdJRDElMCMGA1UECwwcVGVzdCBDZXJ0aWZpY2F0aW9uIEF1dGhvcml0eTENMAsGA1UEAwwEQWdJRDCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOx6+0Ck9RXcTybOIxKULc4/IIZ2yjGdMhHruaLdyBBCI839DVMgNz9THr4QthlwTWCXSCR6gRjKuaASETjSIcecPN7a926k6wgpdO0DM4+ZxTqlxCwF9Swja4zvdg0T3aQrh6err5kU2gAHeQtTuIWBDaqzEzf5POJQq48OjhM7UfW2Zf+1qdla+bIzmBHTgaKTvCuByeS7dFQxiKIEmMm/s6ontn5AIQ3astlTQOJ5fSo2KV9iIATbucXELwDzluLoa8lhJmYu6KVsVyvRWc+D6Bt+0spojFFizn6Je4mHpKvvpPR2XKp5vEr+t5oK3DJx18ZgJ51kcFUHzqY7wPcCAwEAAaNTMFEwHQYDVR0OBBYEFAbZCHgtWasUsHWjQztNdHdgaJSgMB8GA1UdIwQYMBaAFAbZCHgtWasUsHWjQztNdHdgaJSgMA8GA1UdEwEB/wQFMAMBAf8wDQYJKoZIhvcNAQELBQADggEBAHzdVwFKXfG/kmohTB+ujmfRLENwwd61/BdUxYHS8nP6gioQn37EzGE0Bg+yGcT7YVgU6IyoxU7ZhAX/4Ivrl7ETDiMZSFiN7qSJSvkS6LGxHcYoixVSbTTPgONDChM91PyhNRW+3wodGO8pJ62MdtZY7+JLgLuiLe3253p0Y/d+eJEglxMSPlwHCCcS913o8qunap7Eo6k5UktH0d9AqmT/YgoE46tpUm2BADp5dxsdoJmNLwGNxWV3EPUv/GpVUjCetnxJ4HheN57oYhQqGTtZOOzoTQjmwthyAnzkk5+w1uQw2vyRA7cjrqVFea/gl7lV7/lP57vFrj52mRCwsAw=
+					</ds:X509Certificate>
+                </ds:X509Data>
+            </ds:KeyInfo>
+        </KeyDescriptor>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:3000"></SingleLogoutService>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="http://localhost:3000"></SingleLogoutService>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:3000"></SingleLogoutService>
+        <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+        <AssertionConsumerService index="0" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:3000/assertion"></AssertionConsumerService>
+        <AttributeConsumingService index="0">
+            <ServiceName xml:lang="it">Set0</ServiceName>
+            <RequestedAttribute Name="name" />
+            <RequestedAttribute Name="familyName" />
+            <RequestedAttribute Name="fiscalNumber" />
+            <RequestedAttribute Name="email" />
+            <RequestedAttribute Name="spidCode" />
+        </AttributeConsumingService>
+    </SPSSODescriptor>
+</EntityDescriptor>
