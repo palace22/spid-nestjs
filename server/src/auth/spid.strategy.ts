@@ -62,21 +62,38 @@ export class SpidStrategy extends PassportStrategy(Strategy, 'spid') {
                 EntityID: this.serviceProvider.entityMeta.getEntityID(),
                 AttributeConsumingServiceIndex: "0",
             })
-            console.log(context)
             request = context
             return { id: id, context: context };
         })
-        //this.redirect(context)
         return { id: id, context: context, request: request }
     }
 
-    logout() {
-        let a: any = this.serviceProvider.createLogoutRequest(this.identityServiceProvider, 'redirect', { logoutNameID: '11111', sessionIndex: '2' })
-        console.log(a)
+    logout(userId) {
+        const user = users[userId]
+        let request
+        const { id, context } = this.serviceProvider.createLogoutRequest(this.identityServiceProvider, 'redirect', { logoutNameID: 'id_1dcf062064c7cfa0d0769355522b77cf7600d129', sessionIndex: 'id_03bf871b5f0e1377fb43edd19482fde3f4fd9c1c' }, 'www.google.com', logoutRequestTemplate => {
+
+            const nameIDFormat = this.serviceProvider.getEntitySetting().nameIDFormat;
+            const id = '_' + uuid.v4()
+            let a = logoutRequestTemplate as any
+            const context = this.replaceTagFromTemplate(a.context, {
+                ID: id,
+                Issuer: this.serviceProvider.entityMeta.getEntityID(),
+                IssueInstant: new Date().toISOString(),
+                NameIDFormat: Array.isArray(nameIDFormat) ? nameIDFormat[0] : nameIDFormat,
+                NameID: user.nameID,
+                SessionIndex: user.sessionIndex
+            })
+            request = context
+            return { id: id, context: context };
+        })
+        console.log(context)
+        console.log(request)
+
+        return { id: id, context: context, request: request }
     }
 
     async parseResponse(idpResponse) {
-        console.log(idpResponse)
         return await this.serviceProvider.parseLoginResponse(this.identityServiceProvider, 'post', idpResponse)
     }
 

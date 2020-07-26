@@ -10,6 +10,8 @@ class User {
     response: string;
     attributes?: {};
     idpResponse?: SamlParsedResponse;
+    sessionIndex?: string;
+    nameID?: string;
 }
 
 export { User, users }

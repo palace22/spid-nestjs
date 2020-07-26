@@ -15,16 +15,10 @@ export class AppController {
     private readonly appService: AppService,
     private readonly authService: AuthService) { }
 
-  @Get()
-  getHello(): string {
-    console.log('HELLO')
-    return this.appService.getHello();
-  }
-
-  @Get('v1')
-  get(@Body() body: any, @Res() res) {
+  @Post()
+  getHello(@Body() body, @Res() res) {
     console.log(body)
-    res.redirect('http://localhost:8100/home?SAML=2222')
+    res.redirect(`http://localhost:3000`)
   }
 
   @Get('metadata')
@@ -33,11 +27,11 @@ export class AppController {
   }
 
   @Get('sso')
-  getLogin(@Res() res: Response) {
+  getLogin() {
     let authenticationSpid = this.authService.authenticate()
     users[authenticationSpid.id] = {}
     users[authenticationSpid.id].request = authenticationSpid.request
-    res.send(authenticationSpid)
+    return authenticationSpid
   }
 
   @Post(`getUser`)
@@ -50,15 +44,26 @@ export class AppController {
 
   @Post('assertion')
   async test1(@Body() body, @Query() query, @Res() res) {
-    let parsed = await this.authService.parse({ query: query, body: body }) as any
-    users[parsed.extract.response.inResponseTo].attributes = parsed.extract.attributes
-    users[parsed.extract.response.inResponseTo].response = parsed.samlContent
-    users[parsed.extract.response.inResponseTo].idpResponse = parsed
-    res.redirect(`http://localhost:3000/home/?SAMLResponse=${parsed.extract.response.inResponseTo}`)
+    try {
+
+      let parsed = await this.authService.parse({ query: query, body: body }) as any
+      console.log(parsed)
+      users[parsed.extract.response.inResponseTo].attributes = parsed.extract.attributes
+      users[parsed.extract.response.inResponseTo].response = parsed.samlContent
+      users[parsed.extract.response.inResponseTo].idpResponse = parsed
+      users[parsed.extract.response.inResponseTo].sessionIndex = parsed.extract.sessionIndex.sessionIndex
+      users[parsed.extract.response.inResponseTo].nameID = parsed.extract.nameID
+      res.redirect(`http://localhost:3000/home/?SAMLResponse=${parsed.extract.response.inResponseTo}`)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
-  @Get('logout')
-  logoutRequest() {
-    this.authService.logout()
+  @Post('logout')
+  logoutRequest(@Body() body: any) {
+    console.log(body)
+    const logoutRequest = this.authService.logout(body.id)
+    console.log(logoutRequest)
+    return logoutRequest
   }
 }

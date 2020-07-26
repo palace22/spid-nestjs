@@ -5,11 +5,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-segment
-    color="dark"
-    (ionChange)="segmentChanged($event.detail.value)"
-    value="profile"
-  >
+  <div *ngIf="(userSpidObs | async)">
+  <ion-segment color="dark" (ionChange)="segmentChanged($event.detail.value)" value="profile">
     <ion-segment-button value="profile">
       <ion-label>Profile</ion-label>
     </ion-segment-button>
@@ -20,23 +17,25 @@
       <ion-label>Response</ion-label>
     </ion-segment-button>
   </ion-segment>
-  <div *ngIf="segment==='profile'">
-    <ion-list *ngIf="userInfo.name!==undefined">
-      <ion-item>Name {{userInfo.name}}</ion-item>
-      <ion-item>familyName {{userInfo.familyName}}</ion-item>
-      <ion-item>email {{userInfo.email}}</ion-item>
-      <ion-item>spidCode {{userInfo.spidCode}}</ion-item>
-    </ion-list>
+    
+    <div *ngIf="segment==='profile'">
+      <ion-list>
+        <ion-item>Name {{userSpid.attributes.name}}</ion-item>
+        <ion-item>familyName {{userSpid.attributes.familyName}}</ion-item>
+        <ion-item>email {{userSpid.attributes.email}}</ion-item>
+        <ion-item>spidCode {{userSpid.attributes.spidCode}}</ion-item>
+      </ion-list>
+    </div>
+    <div *ngIf="segment==='request'">
+      <pre>{{userSpid.request|xmlFormatter}}</pre>
+    </div>
+    <div *ngIf="segment==='response'">
+      <pre>{{userSpid.response|xmlFormatter}}</pre>
+    </div>
   </div>
-  <div *ngIf="segment==='request'">
-    <pre>{{request|xmlFormatter}}</pre>
-  </div>
-  <div *ngIf="segment==='response'">
-    <pre>{{response|xmlFormatter}}</pre>
-  </div>
-</ion-content>
-<ion-footer>
-  <ion-button color="dark" expand="block" (click)="test()"
-    ><ion-label>Logout</ion-label></ion-button
-  >
-</ion-footer>
+  </ion-content>
+  <ion-footer>
+    <ion-button color="dark" expand="block" (click)="logout()">
+      <ion-label>Logout</ion-label>
+    </ion-button>
+  </ion-footer>

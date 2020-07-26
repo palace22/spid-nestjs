@@ -14,16 +14,16 @@ export class AuthService {
         return this.spidStrategy.authenticate()
     }
 
-    parse(toParse) {
-        return this.spidStrategy.parseResponse(toParse)
+    async parse(toParse) {
+        return await this.spidStrategy.parseResponse(toParse)
     }
 
     red(url) {
         this.spidStrategy.redirect(url)
     }
 
-    logout() {
-        this.spidStrategy.logout()
+    logout(id) {
+        return this.spidStrategy.logout(id)
     }
 
     verify(id: string): boolean {

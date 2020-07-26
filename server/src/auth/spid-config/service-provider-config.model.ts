@@ -34,6 +34,9 @@ const serviceProviderSetting: ServiceProviderSettings = {
     loginRequestTemplate: {
         context: fs.readFileSync('src/auth/templates/loginRequestTemplate.xml').toString(),
     },
+    logoutRequestTemplate:{
+        context: fs.readFileSync('src/auth/templates/logoutRequestTemplate.xml').toString(),
+    }
 }
 
 
