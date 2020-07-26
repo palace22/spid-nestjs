@@ -12,6 +12,7 @@ class User {
     idpResponse?: SamlParsedResponse;
     sessionIndex?: string;
     nameID?: string;
+    host?: string;
 }
 
 export { User, users }

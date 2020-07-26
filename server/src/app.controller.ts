@@ -2,10 +2,11 @@ import { Controller, Get, Post, Body, Res, Query, UseGuards, Req, Param } from '
 import { AppService } from './app.service';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from '@nestjs/passport';
-import { Response } from 'express';
+import { Response, Request } from 'express';
 import { users, User } from './users/users.db';
 import { SamlParsedResponse } from './models/samlParsedIdpResponse.model'
 import { verify } from 'crypto';
+import { RedisOptions } from '@nestjs/common/interfaces/microservices/microservice-configuration.interface';
 @Controller()
 export class AppController {
 
@@ -27,9 +28,10 @@ export class AppController {
   }
 
   @Get('sso')
-  getLogin() {
+  getLogin(@Req() req: Request) {
     let authenticationSpid = this.authService.authenticate()
     users[authenticationSpid.id] = {}
+    users[authenticationSpid.id].host = req.headers.referer
     users[authenticationSpid.id].request = authenticationSpid.request
     return authenticationSpid
   }
@@ -43,17 +45,15 @@ export class AppController {
   }
 
   @Post('assertion')
-  async test1(@Body() body, @Query() query, @Res() res) {
+  async acs(@Body() body, @Query() query, @Res() res) {
     try {
-
       let parsed = await this.authService.parse({ query: query, body: body }) as any
-      console.log(parsed)
       users[parsed.extract.response.inResponseTo].attributes = parsed.extract.attributes
       users[parsed.extract.response.inResponseTo].response = parsed.samlContent
       users[parsed.extract.response.inResponseTo].idpResponse = parsed
       users[parsed.extract.response.inResponseTo].sessionIndex = parsed.extract.sessionIndex.sessionIndex
       users[parsed.extract.response.inResponseTo].nameID = parsed.extract.nameID
-      res.redirect(`http://localhost:3000/home/?SAMLResponse=${parsed.extract.response.inResponseTo}`)
+      res.redirect(`${users[parsed.extract.response.inResponseTo].host}/home/?SAMLResponse=${parsed.extract.response.inResponseTo}`)
     } catch (e) {
       console.log(e)
     }
